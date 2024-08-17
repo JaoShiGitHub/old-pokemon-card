@@ -1,4 +1,4 @@
-import Pokemons from ".components/pokemons.js";
+import Pokemons from "./components/pokemons";
 
 export default function Home() {
   return (
