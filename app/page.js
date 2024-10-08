@@ -1,9 +1,10 @@
-import Pokemons from "./components/pokemons";
+// import Pokemons from "./components/pokemons";
+import SearchPage from "./components/SearchPage";
 
 export default function Home() {
   return (
-    <div>
-      <Pokemons />
+    <div className="bg-body h-screen flex flex-col justify-center items-center">
+      <SearchPage />
     </div>
   );
 }
