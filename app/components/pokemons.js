@@ -28,11 +28,6 @@ export default function Pokemons(pokemon) {
   }
 
   return (
-    // <input
-    //   className="bg-card w-[900px] text-sm text-white"
-    //   placeholder="Search for Pokémon Name or ID"
-    // />
-
     <input
       className="w-full bg-card px-7  text-sm py-2 text-white"
       type="text"
