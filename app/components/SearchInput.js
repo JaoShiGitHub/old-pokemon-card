@@ -5,17 +5,26 @@ const POKEMON_URL = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/";
 
 export default function SearchInput() {
   const [searchPokemon, setSearchPokemon] = useState("");
-  const [pokemonData, pokemonData] = useState([]);
+  const [pokemonData, setPokemonData] = useState([]);
 
   function handleSetSearchPokemon(e) {
     setSearchPokemon(e.target.value);
     console.log(searchPokemon);
   }
 
-  function handleSearchBtn() {
-    console.log("keyword: ", searchPokemon);
+  async function handleSearchBtn() {
+    const pokemonKeyword = searchPokemon.toLowerCase();
+    setSearchPokemon("");
+    try {
+      const response = await fetch(`${POKEMON_URL}${pokemonKeyword}`);
+      const data = await response.json();
+      console.log("Data retrieved:", data);
+      setPokemonData(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   }
-  
+
   return (
     <div className="flex w-full justify-between">
       <input
